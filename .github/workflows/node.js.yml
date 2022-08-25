@@ -25,8 +25,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: ls -l    
-    - run: cd WordCount/ClientApp
+    - run: cd WordCount
     - run: ls -l
+    - run: cd ClientApp
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
