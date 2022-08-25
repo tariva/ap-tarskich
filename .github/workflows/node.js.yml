@@ -24,10 +24,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: ls -l    
-    - run: cd WordCount
-    - run: ls -l
-    - run: cd ClientApp
     - run: npm ci
+      working-directory: ./WordCount/ClientApp
     - run: npm run build --if-present
+      working-directory: ./WordCount/ClientApp
     - run: npm test
+      working-directory: ./WordCount/ClientApp
