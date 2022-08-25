@@ -28,5 +28,5 @@ jobs:
       working-directory: ./WordCount/ClientApp
     - run: npm run build --if-present
       working-directory: ./WordCount/ClientApp
-    - run: npm test
+    - run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
       working-directory: ./WordCount/ClientApp
