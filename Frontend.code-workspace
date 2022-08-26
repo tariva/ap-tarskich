@@ -14,7 +14,7 @@
     "configurations": [
       {
         "name": "ng serve",
-        "type": "pwa-chrome",
+        "type": "chrome",
         "request": "launch",
         "preLaunchTask": "ng: serve",
         "url": "http://localhost:4200/"
@@ -25,6 +25,13 @@
         "request": "launch",
         "preLaunchTask": "npm: test",
         "url": "http://localhost:9876/debug.html"
+      },
+      {
+        "name": "ng serve vsc",
+        "type": "chrome",
+        "request": "launch",
+        "preLaunchTask": "npm: start-vsc",
+        "url": "http://localhost:4200/"
       }
     ]
   },
