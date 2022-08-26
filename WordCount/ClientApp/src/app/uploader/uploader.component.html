@@ -1,0 +1,8 @@
+<p>uploader works!</p>
+<ejs-uploader
+  #defaultupload
+  [autoUpload]="false"
+  [asyncSettings]="path"
+  maxFileSize="15000000000000"
+  (uploading)="onFileUpload($event)"
+></ejs-uploader>
