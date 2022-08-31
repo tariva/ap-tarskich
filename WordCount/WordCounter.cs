@@ -27,7 +27,10 @@ namespace WordCount
                 {
                     foreach (var x in line.Split())
                     {
-                        result.AddOrUpdate(x, 1, (key, val) => val + 1);
+                        if (x.Length > 0)
+                        {
+                            result.AddOrUpdate(x, 1, (key, val) => val + 1);
+                        }
                     }
                     
                 }

@@ -12,8 +12,11 @@ import { ResultsViewComponent } from './results-view/results-view.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { ChartAllModule, AccumulationChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
+import { ResultsChartsViewComponent } from './results-charts-view/results-charts-view.component';
+
 @NgModule({
-  declarations: [AppComponent, FilesViewComponent, ResultsViewComponent],
+  declarations: [AppComponent, FilesViewComponent, ResultsViewComponent, ResultsChartsViewComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     AppRoutingModule,
@@ -23,7 +26,10 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     ScrollingModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    ChartAllModule, 
+    AccumulationChartAllModule, 
+    RangeNavigatorAllModule 
   ],
   providers: [],
   bootstrap: [AppComponent],

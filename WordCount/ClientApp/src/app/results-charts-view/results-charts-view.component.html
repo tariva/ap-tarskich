@@ -1,0 +1,10 @@
+<div class="control-section" *ngIf="data?.length">
+    <div align='center'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [title]='"Top Words"' [tooltip]='tooltip' (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Bar' xName='x' yName='y' name='Counts' [marker]='marker'> </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
