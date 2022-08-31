@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { RequestService } from 'src/core/request.service';
 import { StateHelperService } from 'src/core/state-helper.service';
 
@@ -9,7 +10,8 @@ import { StateHelperService } from 'src/core/state-helper.service';
 })
 export class FilesViewComponent implements OnInit {
   FilesList?: string[];
-
+  counting: boolean = true;
+  countingSub?: Subscription;
   constructor( private stateHelperService: StateHelperService, private requestService: RequestService) { }
 
   ngOnInit(): void {
@@ -18,9 +20,13 @@ export class FilesViewComponent implements OnInit {
     })
   }
   public proccessFile(fileName: string) {
-    this.requestService.postWordCount(fileName).subscribe(wordcount => {
-      this.stateHelperService.setWordCount(wordcount);
+    this.counting = true;
+    this.countingSub = this.requestService.postWordCount(fileName).subscribe(wordcount => {
+      this.stateHelperService.setWordCount(wordcount);this.counting = false;
     })
+  }
+  public abortFile() {
+    this.countingSub?.unsubscribe();
   }
 
 }

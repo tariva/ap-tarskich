@@ -1,0 +1,13 @@
+.example-viewport {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.button-row {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}

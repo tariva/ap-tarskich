@@ -1,5 +1,9 @@
-<ng-container class="" *ngFor="let file of FilesList">
-    <div class="row">
-        <span>{{file}}</span> <button mat-button color="primary" (click)="proccessFile(file)">Wörten zählen</button>
+
+<ng-container  *ngFor="let file of FilesList">
+    <div class="row example-viewport">
+        <span>{{file}}</span> <button mat-button color="primary" (click)="proccessFile(file)" [disabled]="counting">Wörten zählen</button>
     </div>
 </ng-container>
+<div class="button-row row example-viewport">
+    <button mat-button color="warn" (click)="abortFile()" *ngIf="counting">Abbrechen</button>
+</div>
