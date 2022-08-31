@@ -6,6 +6,7 @@
   (uploading)="onFileUpload($event)"
   (removing)='onFileRemove($event)'
   (actionComplete)="onActionComplete($event)"
+  allowedExtensions = '.txt'
 >
 <!-- <e-files *ngFor="let file of FilesList">
   <e-uploadedfiles [name]='file' size=11000 type='.txt'></e-uploadedfiles>
