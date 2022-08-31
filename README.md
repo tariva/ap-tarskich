@@ -13,3 +13,6 @@ Verwendet wurde dabei das Visual Studio Template für .netCore+Angular, Angular 
 
 Solution ('WordCount\WordCount.sln) öffnen und starten
 
+## Tests
+Automatische Tests mit Github actions
+Manuele Tests große Files in WordCount\wwwroot\uploads kopieren und zählen lassen
