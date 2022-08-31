@@ -26,9 +26,24 @@ namespace WordCount.Controllers
         [HttpPost]
         public async Task<IActionResult> countWords()
         {
-            var name = HttpContext.Request.Form["name"];
+            var partialName = HttpContext.Request.Form["name"];
 
-            var fileName = Path.GetFileName(name);
+            var partialFileName = Path.GetFileName(partialName);
+
+            DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(uploadPath);
+            FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles( partialName + ".*");
+
+            if (filesInDir.Length == 0)
+            {
+                return NotFound();
+            }
+            if (filesInDir.Length > 1)
+            {
+                return BadRequest("To many file found");
+            }
+            var fileName = filesInDir[0].FullName;
+
+
             var filePath = Path.Combine(uploadPath, fileName);
            
             var x = await new WordCounter(filePath).CountWords();
