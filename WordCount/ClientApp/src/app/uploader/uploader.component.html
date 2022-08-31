@@ -5,4 +5,9 @@
   [asyncSettings]="path"
   maxFileSize="15000000000000"
   (uploading)="onFileUpload($event)"
-></ejs-uploader>
+  (removing)='onFileRemove($event)'
+>
+<!-- <e-files *ngFor="let file of FilesList">
+  <e-uploadedfiles [name]='file' size=11000 type='.txt'></e-uploadedfiles>
+</e-files> -->
+</ejs-uploader>
