@@ -1,22 +1,21 @@
-
-
 .example-viewport {
     height: 200px;
     width: 80%;
     margin-right: auto;
     margin-left: auto;
     // border: 1px solid black;
-  }
-  
-  .example-dt {
+}
+
+.example-dt {
     height: 30px;
     float: left;
-  width: 45%;
+    width: 45%;
     font-weight: bold;
-  }
-  
-  .example-dd {
+}
+
+.example-dd {
     float: left;
-  width: 45%;
+    width: 45%;
     height: 30px;
-  }
+    margin-inline-start: 0;
+}

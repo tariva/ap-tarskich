@@ -10,7 +10,7 @@ import { StateHelperService } from 'src/core/state-helper.service';
 })
 export class FilesViewComponent implements OnInit {
   FilesList?: string[];
-  counting: boolean = true;
+  counting: boolean = false;
   countingSub?: Subscription;
   constructor( private stateHelperService: StateHelperService, private requestService: RequestService) { }
 
@@ -22,11 +22,13 @@ export class FilesViewComponent implements OnInit {
   public proccessFile(fileName: string) {
     this.counting = true;
     this.countingSub = this.requestService.postWordCount(fileName).subscribe(wordcount => {
-      this.stateHelperService.setWordCount(wordcount);this.counting = false;
+      this.stateHelperService.setWordCount(wordcount);
+      this.counting = false;
     })
   }
   public abortFile() {
     this.countingSub?.unsubscribe();
+    this.counting = false;
   }
 
 }
